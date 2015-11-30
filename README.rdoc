@@ -1,11 +1,13 @@
 == README
 
-1. APP DESIGN
+APP DESIGN
+
 Upon landing on the main page a user has the choice to either login or to register, once a user is logged in / registered they will land on the main/only page on the site. At the top they will be able to input a twitter handle and once searched, the results will display below.
 
 There is only one table in the app and that is for users, tweets do not get saved once searched because of this I made a twitter module that holds all of the logic and included it in the tweets controller. 
 
-2. LOCAL SETUP INSTRUCTIONS
+LOCAL SETUP INSTRUCTIONS
+
   1. Git pull the repository
   2. Create a local database.yml file set it up for PosegreSQL
   3. Bundle install the gems
@@ -14,7 +16,8 @@ There is only one table in the app and that is for users, tweets do not get save
   6. Use the rake command to create a local database and to rake the migrations
   7. Use the rails server command to launch the local server
 
-3. HEROKU DEPLOYMENT INSTRUCTIONS
+HEROKU DEPLOYMENT INSTRUCTIONS
+
   1. Make sure master branch is git is up-to-date on GitHub
   2. Run "heroku create (app name)" to create a new heroku app
   3. Run "git push heroku master"
