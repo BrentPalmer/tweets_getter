@@ -1,0 +1,26 @@
+== README
+
+1. APP DESIGN
+Upon landing on the main page a user has the choice to either login or to register, once a user is logged in / registered they will land on the main/only page on the site. At the top they will be able to input a twitter handle and once searched, the results will display below.
+
+There is only one table in the app and that is for users, tweets do not get saved once searched because of this I made a twitter module that holds all of the logic and included it in the tweets controller. 
+
+2. LOCAL SETUP INSTRUCTIONS
+  1. Git pull the repository
+  2. Create a local database.yml file set it up for PosegreSQL
+  3. Bundle install the gems
+  4. Run "bundle exec figaro:install" for application.yml file
+  5. Input own: twitter_consumer_key / twitter_consumer_secret / twitter_access_token / twitter_access_token_secret in application.yml file
+  6. Use the rake command to create a local database and to rake the migrations
+  7. Use the rails server command to launch the local server
+
+3. HEROKU DEPLOYMENT INSTRUCTIONS
+  1. Make sure master branch is git is up-to-date on GitHub
+  2. Run "heroku create (app name)" to create a new heroku app
+  3. Run "git push heroku master"
+  4. Run "figaro heroku:set -e production" to set twitter config keys
+  5. Run "heroku run rake db:migrate" to set up user table onto heroku
+  note: If master branch was updated on GitHub make sure you also update the Heroku app (If you want the c hanges to go live.)
+
+
+Enjoy!

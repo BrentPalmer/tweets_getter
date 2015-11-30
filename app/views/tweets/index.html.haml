@@ -1,0 +1,41 @@
+.container
+  .row{ style: "background-color: #0084b4"}
+    .col-sm-4
+      %h1 
+        Tweets_Getter
+      %h3
+        = "Hello: #{current_user.email}"  
+        %a{ href: logout_path, style: "color: #3cf" }
+          Logout
+
+    .col-sm-6.col-sm-offset-2
+      = form_tag tweets_path, method: 'get' do
+        .form-group
+          %h2
+            = label_tag "Insert twitter handle"
+        .form-group
+          = text_field_tag :twitter_handle, nil, class: "input-lg"
+          = submit_tag "Get Tweets", class: "btn btn-lg btn-info"
+      %h5
+        Tweets belong to: 
+        = @twitter_handle
+
+  %br
+  .row
+    .col-sm-12
+      -unless @tweets.nil?
+      - count = 1
+        - @tweets.each do |text, date|
+          .col-sm-1
+            .well
+              %h4{ style: "color: #000"}
+                = count
+                
+          .col-sm-11
+            .well
+              %p
+                = text
+              %p
+                posted on:
+                = date
+            - count += 1
